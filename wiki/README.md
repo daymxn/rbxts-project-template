@@ -1,4 +1,4 @@
-# expect website
+# Wiki
 
 The wiki website for the library.
 
