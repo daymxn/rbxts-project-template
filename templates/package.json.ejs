@@ -1,0 +1,98 @@
+{
+  "name": "<%- packageName %>",
+  "version": "0.0.1",
+  "description": "A short description about my library",
+  "main": "out/init.luau",
+  "scripts": {
+    "build": "rbxtsc -p ./tsconfig.release.json",
+    "watch": "pnpm build -w",
+    <%_ if (locals.tests) { _%>
+    "build:dev": "rbxtsc -p --type game --rojo test.project.json",
+    "dev": "pnpm build:dev -w",
+    "test": "pnpm bs test",
+    <%_ } _%>
+    "help": "pnpm bs help"
+  },
+  "keywords": [
+    "rbxts",
+    "typescript",
+    "roblox"
+  ],
+  "author": "<%- projectAuthor %>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/<%- repoShort %>.git"
+  },
+  "bugs": {
+    "url": "https://github.com/<%- repoShort %>/issues"
+  },
+  "license": "Apache-2.0",
+  "types": "out/index.d.ts",
+  "files": [
+    "out",
+    "!**/*.tsbuildinfo" <%_ if (locals.tests) { %>,
+    "!**/tests/**",
+    "!**/*.spec.lua",
+    "!**/*.spec.luau",
+    "!**/*.spec.ts",
+    "!**/*.spec.d.ts" <%_ } %>
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  <%_ if(locals.rollup) { _%>
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true,
+    "target": "esnext",
+    "dts": {
+      "only": true
+    }
+  },
+  <%_ } _%>
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "@eslint/js": "^9.16.0",
+    "@daymxn/bs": "latest",
+    <%_ if (locals.api) { _%>
+    "@microsoft/api-extractor": "^7.48.0",
+    <%_ } _%>
+    "@rbxts/compiler-types": "^3.0.0-types.0",
+    <%_ if (locals.tests) { _%>
+    "@rbxts/testez": "github:daymxn/testez#patch-1",
+    <%_ } _%>
+    "@rbxts/types": "^1.0.813",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.10.1",
+    "@typescript-eslint/eslint-plugin": "8.17.0",
+    "@typescript-eslint/parser": "8.17.0",
+    <%_ if (locals.rollup) { _%>
+    "tsup": "^8.3.5",
+    <%_ } _%>
+    "eslint": "^9.16.0",
+    "eslint-plugin-notice": "^1.0.0",
+    "eslint-plugin-roblox-ts": "github:daymxn/eslint-plugin-roblox-ts#daymon-eslint-9",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "jiti": "^2.4.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "roblox-ts": "^3.0.0-next",
+    "typescript": "=5.5.3",
+    "typescript-eslint": "^8.17.0"
+  },
+  "dependencies": {
+    "@rbxts/expect": "^2.0.1",
+    "@rbxts/services": "^1.5.5",
+    "@rbxts/string-utils": "^1.0.3",
+    "@rbxts/rust-classes": "^0.13.0",
+    "@rbxts/object-utils": "^1.0.4",
+    "@rbxts/t": "^3.1.1"
+  },
+  "peerDependencies": {
+    "roblox-ts": "^3.0.0"
+  }
+}

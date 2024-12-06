@@ -1,0 +1,13 @@
+{
+    "title": "expect",
+    "packageName": "@rbxts/expect",
+    "author": "Daymon Littrell-Reyes",
+    "url": "https://rbxts-expect.daymxn.com",
+    "repo": {
+        "org": "daymxn",
+        "project": "rbxts-expect"
+    },
+    "features": {
+        "api": false
+    }
+}

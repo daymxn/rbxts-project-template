@@ -1,0 +1,87 @@
+{
+  "name": "@rbxts/timeit",
+  "version": "0.0.2-20241110170112",
+  "description": "Performance timer for ROBLOX.",
+  "main": "out/init.luau",
+  "scripts": {
+    "build": "rbxtsc -p ./tsconfig.release.json",
+    "build:dev": "rbxtsc -p --type game --rojo test.project.json",
+    "watch": "pnpm build -w",
+    "dev": "pnpm build:dev -w",
+    "test": "pnpm bs test",
+    "help": "pnpm bs help"
+  },
+  "keywords": [
+    "rbxts",
+    "typescript",
+    "roblox",
+    "TODO(Add checklist in readme for things I should do in a new repo (like, add keywords))"
+  ],
+  "author": "Daymon Littrell-Reyes",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daymxn/rbxts-timeit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/daymxn/rbxts-timeit/issues"
+  },
+  "license": "Apache-2.0",
+  "types": "out/index.d.ts",
+  "files": [
+    "out",
+    "!**/tests/**",
+    "!**/*.tsbuildinfo",
+    "!**/*.spec.lua",
+    "!**/*.spec.luau",
+    "!**/*.spec.ts",
+    "!**/*.spec.d.ts"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "splitting": false,
+    "sourcemap": false,
+    "clean": true,
+    "target": "esnext",
+    "dts": {
+      "only": true
+    }
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.27.10",
+    "@eslint/js": "^9.16.0",
+    "@microsoft/api-extractor": "^7.48.0",
+    "@rbxts/compiler-types": "^3.0.0-types.0",
+    "@rbxts/object-utils": "^1.0.4",
+    "@rbxts/testez": "git+https://github.com/daymxn/testez.git#patch-1",
+    "@rbxts/types": "^1.0.813",
+    "@types/eslint__js": "^8.42.3",
+    "@types/node": "^22.10.1",
+    "@typescript-eslint/eslint-plugin": "^8.17.0",
+    "@typescript-eslint/parser": "^8.17.0",
+    "bs-cli": "github:daymxn/bs-cli#main",
+    "eslint": "^9.16.0",
+    "eslint-plugin-notice": "^1.0.0",
+    "eslint-plugin-roblox-ts": "github:daymxn/eslint-plugin-roblox-ts#feat/upgrade-to-eslint-9",
+    "eslint-plugin-unicorn": "^56.0.1",
+    "jiti": "^2.4.1",
+    "prettier": "^3.4.2",
+    "prettier-plugin-organize-imports": "^4.1.0",
+    "roblox-ts": "^3.0.0-next",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.17.0"
+  },
+  "dependencies": {
+    "@rbxts/expect": "^2.0.1",
+    "@rbxts/services": "^1.5.5",
+    "@rbxts/string-utils": "^1.0.3",
+    "@rbxts/t": "^3.1.1"
+  },
+  "peerDependencies": {
+    "roblox-ts": "^3.0.0"
+  }
+}
