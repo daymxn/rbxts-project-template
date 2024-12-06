@@ -6,6 +6,8 @@ rbxts-project-template
 
 ---
 
+<br>
+
 ## Usage
 
 Use the [create-rbxts-library](https://github.com/daymxn/create-rbxts-library) package to
