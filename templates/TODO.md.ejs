@@ -3,19 +3,39 @@
 Tasks I need to complete before releasing the library.
 
 - Fillout [readme](README.md)
-  - [ ] description
-  <%_ if (locals.logo) { _%>
-  - [ ] logo
-  <%_ } _%>
-  - [ ] overview
-  - [ ] usage
-  - [ ] roadmap
-  - [ ] demo code
-  - [ ] demo screenshot
+  - [ ] Description
+<%_ if (locals.logo) { _%>
+  - [ ] Logo
+<%_ } _%>
+  - [ ] Overview
+  - [ ] Usage
+  - [ ] Roadmap
+  - [ ] Demo code
+  - [ ] Demo screenshot
+<%_ if (locals.logo || locals.wiki) { _%>
+
+- Assets
+<%_ if (locals.logo) { _%>
+  - [ ] [Root logo](assets/logo.svg)
+<%_ } _%>
+<%_ if (locals.wiki) { _%>
+  - [ ] [Wiki logo](wiki/static/img/logo.svg)
+  - [ ] [Wiki favicon](wiki/static/img/favicon.ico)
+  - [ ] [Wiki social card](wiki/static/img/social-card.png)
+  - [ ] [Small wiki chrome logo](wiki/static/img/android-chrome-192x192.png)
+  - [ ] [Large wiki chrome logo](wiki/static/img/android-chrome-512x512.png)
+  - [ ] [Apple logo](wiki/static/img/apple-touch-icon.png)
+<%_ } _%>
+<%_ } _%>
 
 - Fillout [package.json](package.json)
-  - [ ] description
-  - [ ] keywords
+  - [ ] Description
+  - [ ] Keywords
 
 - Fillout [contributing](CONTRIBUTING.md)
-  - [ ] Provide docs link
+  - [ ] Website API Link
+<%_ if (locals.wiki) { _%>
+
+- Fillout [wiki](/wiki/project-config.json)
+  - [ ] Website URL
+<%_ } _%>

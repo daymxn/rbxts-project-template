@@ -7,12 +7,16 @@ some things you should know.
 > Making public contributions to this repo means you accept the [LICENSE](LICENSE) agreement and you're contributing code that also respects the [LICENSE](LICENSE) agreement.
 
 ## Getting started
+<%
+const resources = [];
+if (locals.wiki) resources.push("[wiki](#TODO)");
+if (locals.api) resources.push(`[API Reference](api/${locals.projectName}.api.md)`);
+if (resources.length === 0) resources.push("[source code](src)");
 
-Make sure you've given both the
-[wiki](#)
-and the
-[API Reference](api/<%- projectName %>.api.md)
-a read before moving forward, such that you understand the design behind **<%- projectName %>**.
+const text = `the ${resources.join(' and the ')}`;
+%>
+Make sure you've given <%- text %> a read before moving forward,
+such that you understand the design behind **<%- projectName %>**.
 
 ### Scripts
 
