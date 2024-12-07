@@ -30,7 +30,16 @@
   "lint": {
     "cache": false,
     "config": null,
-    "patterns": ["."]
+    "patterns": [
+      "."
+    ]
+  },
+  "format": {
+    "cache": false,
+    "config": null,
+    "patterns": [
+      "."
+    ]
   },
   "registry": {
     "global": true,
@@ -54,12 +63,12 @@
     "console": true,
     "jsonReportPath": "./report.json",
     "markdownReportPath": "./report.md",
-    "rbxlOutputPath": "node_modules/bs-cli/dist/assets/tests/test.rbxl",
+    "rbxlOutputPath": "node_modules/@daymxn/bs/dist/assets/tests/test.rbxl",
     "rebuild": true,
     "rojoProject": "./test.project.json",
     "showPass": true,
     "showSkip": true,
-    "testsPath": "node_modules/bs-cli/dist/assets/tests/lune",
+    "testsPath": "node_modules/@daymxn/bs/dist/assets/tests/lune",
     "trim": true
   }
 }
